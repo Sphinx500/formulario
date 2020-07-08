@@ -1,12 +1,12 @@
 import web 
 import app 
 
-render=web.template.render('application/views/')
+render=web.template.render('application/views/personas/')
 
-class Delete():
+class List():
 
     def GET(self):
       try:
-        return render.delete()
+        return render.list()
       except Exception as e:
         return "Error" + str(e.args)

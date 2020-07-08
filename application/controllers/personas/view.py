@@ -1,12 +1,12 @@
 import web 
 import app 
 
-render=web.template.render('application/views/')
+render=web.template.render('application/views/personas/')
 
-class Insert():
+class View():
 
     def GET(self):
       try:
-        return render.insert()
+        return render.view()
       except Exception as e:
         return "Error" + str(e.args)

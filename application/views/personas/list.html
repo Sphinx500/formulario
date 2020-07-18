@@ -51,36 +51,26 @@
       <th scope="col">Sexo</th>
       <th scope="col">Estado</th>
     </tr>
-    <!---
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    
   </tbody>
-  --->
+  $for row  in result:
+      <tr>
+        <td>$row['id']</td>
+        <td>$row['nombre']</td>
+        <td>$row['pri_ap']</td>
+        <td>$row['seg_ap']</td>
+        <td>$row['age']</td>
+        <td>$row['date']</td>
+        <td>$row['gender']</td>
+        <td>$row['state']</td>
+      </tr>
 </table>
 <body background="https://image.freepik.com/vector-gratis/diseno-patron-mandala-sobre-fondo-blanco_1308-33479.jpg">
-  </body>
+  <button type="button" class="btn btn-warning" style= "background:blue">Insertar</button>
+  <button type="button" class="btn btn-danger">Eliminar</button>
+  <button type="button" class="btn btn-warning" style= "background:gray">Ver</button>
+  <button type="button" class="btn btn-danger" style= "background:orange">Modificar</button>  
+</body>
 </html>

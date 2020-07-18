@@ -13,7 +13,7 @@ CREATE TABLE students(
     state varchar(100) NOT NULL
 ) ENGINE= InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO personas(nombre,email)
+INSERT INTO personas(nombre,pri_ap,seg_ap,age,date,gender,state)
 VALUES
 ('Fernando','Hernandez', 'Vazquez', '20','27-01-00', 'masculino','hidalgo');
 

@@ -14,15 +14,17 @@ class Insert():
     def POST(self):
         try:
             form = web.input()
-            print(form)
-            print(form.id)
-            print(form.nombre)
-            print(form.pri_ap)
-            print(form.seg_ap)
-            print(form.age)
-            print(form.date)
-            print(form.gender)
-            print(form.state)
-            return render.insert()
+            id=form.id
+            nombre= form.nombre
+            primer_apellido=form.pri_ap
+            segundo_apellido=form.seg_ap
+            edad= form.age
+            fecha_nac=form.date
+            genero=form.gender
+            Estado=form.state
+            render.insert(nombre,pri_ap,seg_ap,age,date,gender,state)
+            web.seeother('/list')
         except Exception as e:
-            return "Ups, algo salio mal"
+            print("Ups, algo salio mal")
+            return render.insert()
+            

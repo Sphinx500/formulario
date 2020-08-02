@@ -9,7 +9,7 @@ render=web.template.render('application/views/personas/')
 class List():
 
     def GET(self):
-      try:
+      try: 
         result = model_personas.select()
         return render.list(result)
       except Exception as e:

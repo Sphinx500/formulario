@@ -6,7 +6,7 @@ urls = (
     '/insert', 'application.controllers.personas.insert.Insert',
     '/list', 'application.controllers.personas.list.List',
     '/update', 'application.controllers.personas.update.Update',
-    '/view', 'application.controllers.personas.view.View',
+    '/view/(.*)', 'application.controllers.personas.view.View',
 )
 app = web.application(urls, globals())
 

@@ -79,6 +79,33 @@ class Personas():
             print(e)
             return False
 
+    def update(self, matricula, nombre, pri_ap, seg_ap, age, fdate, gender, state):
+        try:
+            self.connect()
+            query = ("UPDATE students SET nombre=%s, pri_ap=%s,seg_ap=%s,age=%s,fdate=%s,gender=%s,state=%s WHERE matricula=%s;")
+            values = (nombre, pri_ap, seg_ap, age, fdate, gender, state, matricula)
+            self.cursor.execute(query, values)
+            self.cnx.commit()
+            self.cursor.close()
+            self.cnx.close()
+            return True
+        except Exception as e:
+            print(e)
+            return False
+    def delete(self, matricula):
+        try:
+            self.connect()
+            query = ("DELETE FROM students WHERE matricula= %s;")
+            values = (matricula,)
+            self.cursor.execute(query, values)
+            self.cnx.commit()
+            self.cursor.close()
+            self.cnx.close()
+            return True
+        except Exception as e:
+            print(e)
+            return False
+
 objeto = Personas()
 objeto.connect() 
 #objeto.insert("1718110388","lupita","espinoza","riveros","20","2000/04/05","Femenino","Hidalgo")

@@ -28,8 +28,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="/view">Ver Alumno<span class="sr-only">(current)</span></a>
       </li>
-    
-    
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -37,53 +35,52 @@
     </form>
   </div>
 </nav>
-<br>
-<br>
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Matricula</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Primer apellido</th>
-      <th scope="col">Segundo apellido</th>
-      <th scope="col">Edad</th>
-      <th scope="col">Fecha de nacimiento</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Estado</th>
-      <th scope="col">ELIMINAR</th>
-    </tr>
-  </thead>
-  <!---
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-  --->
-</table>
-<br>
-<button type="button" class="btn btn-danger">ELIMINAR</button>
+
+<form method="POST" action="">
+  <div class="form-group">
+    <label for="matricula">Matricula del alumno</label>
+    <input type="number" readonly class="form-control" id="matricula" name="matricula" value="$result['matricula']">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Nombre del alumno</label>
+    <input type="text" readonly class="form-control" id="name" name="name" value="$result['nombre']">
+  </div>
+
+  <div class="form-group">
+    <label for="primero">Apellido paterno del alumno</label>
+    <input type="text" readonly class="form-control" id="primero" name="primero" value="$result['pri_ap']">
+  </div>
+
+  <div class="form-group">
+    <label for="segundo">Apellido materno del alumno</label>
+    <input type="text" readonly class="form-control" id="segundo" name="segundo" value="$result['seg_ap']">
+  </div>
+
+  <div class="form-group">
+    <label for="edad">Edad del alumno</label>
+    <input type="number" readonly class="form-control" id="edad" name="edad" value="$result['age']">
+  </div>
+
+  <div class="form-group">
+    <label for="fecha">Fecha de nacimiento del alumno</label>
+    <input type="text" readonly class="form-control" id="fecha" name="fecha" value="$result['fdate']">
+  </div>
+
+  <div class="form-group">
+    <label for="sexo">Sexo</label>
+    <input type="text" readonly class="form-control" id="sexo" name="sexo" value="$result['gender']">
+  </div>
+
+  <div class="form-group">
+    <label for="estado">Estado</label>
+    <input type="text" readonly class="form-control" id="estado" name="estado" value="$result['state']">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Delete</button>
+   
+  </div>
+</form>  
 <body background="https://image.freepik.com/vector-gratis/diseno-patron-mandala-sobre-fondo-blanco_1308-33479.jpg">
   </body>
 </html>

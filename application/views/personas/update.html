@@ -1,3 +1,4 @@
+$def with(result)
 <!DOCTYPE html>
 <html>
 <header>
@@ -31,7 +32,6 @@
         <a class="nav-link" href="/view">Ver Alumno<span class="sr-only">(current)</span></a>
       </li>
     
-    
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -39,57 +39,53 @@
     </form>
   </div>
 </nav>
-<br>
-<br>
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Matricula</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Primer apellido</th>
-      <th scope="col">Segundo apellido</th>
-      <th scope="col">Edad</th>
-      <th scope="col">Fecha de nacimiento</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Estado</th>
-    </tr>
-    <!---
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-  --->
-</table>
-<br>
-<br>
-<form><div class="form-group"><label for="exampleFormControlInput1">MATRICULA</label><input type="number" class="form-control" id="ControlInput1" placeholder="17180000"></div><div class="form-group"><label for="exampleFormControlInput1">NOMBRE</label><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></div><div class="form-group"><label for="exampleFormControlInput1">PRIMER APELLIDO</label><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></div><div class="form-group"><label for="exampleFormControlInput1">SEGUNDO APELLIDO</label><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></div><div class="form-group"><label for="exampleFormControlInput1">EDAD</label><input type="number" class="form-control" id="exampleFormControlInput1" placeholder="18"></div><div class="form-group"><label for="exampleFormControlInput1">FECHA DE NACIMIENTO</label><input type="date" class="form-control" id="exampleFormControlInput1" placeholder=""></div><div><select class="form-control form-control"><option>Hombre</option><option>Mujer</option><option>Otro</option></select></div> <div><label for="validationDefault04">Estado</label><select class="custom-select" id="validationDefault04" required><option selected disabled value="">Choose...</option><option>...</option></select></div><br><br>
-<input class="btn btn-success" type="submit" value="Submit">
-<br>
-<br>
-<input class="btn btn-danger" type="reset" value="Reset">
+
+
+<form method="POST" action="">
+  <div class="form-group">
+    <label for="matricula">Matricula</label>
+    <input type="number" readonly class="form-control" id="matricula" name="matricula" value="$result['matricula']">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Nombre</label>
+    <input type="text" required class="form-control" id="name" name="name" value="$result['nombre']">
+  </div>
+
+  <div class="form-group">
+    <label for="primero">Apellido paterno</label>
+    <input type="text" required class="form-control" id="primero" name="primero" value="$result['pri_ap']">
+  </div>
+
+  <div class="form-group">
+    <label for="segundo">Apellido materno</label>
+    <input type="text" required class="form-control" id="segundo" name="segundo" value="$result['seg_ap']">
+  </div>
+
+  <div class="form-group">
+    <label for="edad">Edad del alumno</label>
+    <input type="number" required class="form-control" id="edad" name="edad" value="$result['age']">
+  </div>
+
+  <div class="form-group">
+    <label for="fecha">Fecha de nacimiento</label>
+    <input type="text" required class="form-control" id="fecha" name="fecha" value="$result['fdate']">
+  </div>
+
+  <div class="form-group">
+    <label for="sexo">Sexo</label>
+    <input type="text" required class="form-control" id="sexo" name="sexo" value="$result['gender']">
+  </div>
+
+  <div class="form-group">
+    <label for="estado">Estado</label>
+    <input type="text" required class="form-control" id="estado" name="estado" value="$result['state']">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Update</button>
+   
+  </div>
+</form> 
 <body background="https://image.freepik.com/vector-gratis/diseno-patron-mandala-sobre-fondo-blanco_1308-33479.jpg">
   </body>
 </html>

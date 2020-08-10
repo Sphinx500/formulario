@@ -24,14 +24,14 @@ class Personas():
             result = []
             for row in self.cursor:
                 r = {
-                    'matricula':row[0],
-                    'nombre':row[1],
-                    'pri_ap':row[2],
-                    'seg_ap':row[3],
-                    'age':row[4],
-                    'fdate':row[5],
-                    'gender':row[6],
-                    'state':row[7]
+                    'matricula':row[1],
+                    'nombre':row[2],
+                    'pri_ap':row[3],
+                    'seg_ap':row[4],
+                    'age':row[5],
+                    'fdate':row[6],
+                    'gender':row[7],
+                    'state':row[8]
                 }
                 result.append(r)
             self.cursor.close()
@@ -50,14 +50,14 @@ class Personas():
             result = []
             for row in self.cursor:
                 diccionario = {
-                    'matricula':row[0],
-                    'nombre':row[1],
-                    'pri_ap':row[2],
-                    'seg_ap':row[3],
-                    'age':row[4],
-                    'fdate':row[5],
-                    'gender':row[6],
-                    'state':row[7]
+                   'matricula':row[1],
+                    'nombre':row[2],
+                    'pri_ap':row[3],
+                    'seg_ap':row[4],
+                    'age':row[5],
+                    'fdate':row[6],
+                    'gender':row[7],
+                    'state':row[8]
                 }
                 result.append(diccionario)
             self.cursor.close()
@@ -83,7 +83,7 @@ class Personas():
         try:
             self.connect()
             query = ("UPDATE students SET nombre=%s, pri_ap=%s,seg_ap=%s,age=%s,fdate=%s,gender=%s,state=%s WHERE matricula=%s;")
-            values = (nombre, pri_ap, seg_ap, age, fdate, gender, state, matricula)
+            values = (nombre, pri_ap, seg_ap, age, fdate, gender, state,matricula )
             self.cursor.execute(query, values)
             self.cnx.commit()
             self.cursor.close()

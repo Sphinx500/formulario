@@ -7,12 +7,13 @@ class Personas():
     def connect(self):
         try:
             self.cnx = mysql.connector.connect(
-                user='root',
-                password='lup11t44',
-                host='127.0.0.1',
+                user='qqwdwsedy6y55bwq',
+                password='bgwgnj19klw9wsgx',
+                host='s554ongw9quh1xjs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
                 port=3306,
-                database='alumnos'
+                database='hd331w2qe3rpldjj'
             )
+
             self.cursor = self.cnx.cursor()
         except Exception as e:
             print(e)
@@ -65,6 +66,7 @@ class Personas():
             return result
         except Exception as e:
             print(e)
+
     def insert(self, matricula, nombre, pri_ap, seg_ap, age, fdate, gender, state):
         try:
             self.connect()
@@ -92,6 +94,8 @@ class Personas():
         except Exception as e:
             print(e)
             return False
+
+            
     def delete(self, matricula):
         try:
             self.connect()
